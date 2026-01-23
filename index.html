@@ -1,103 +1,126 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Golden Garden | Jardín de Eventos</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Golden Garden | Jardín de Eventos</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div>
+          <img
+            src="src/assets/GoldenGardenDarckTheme.png"
+            alt="Logo no cargado"
+            class="LogoEmpresanav"
+          />
+        </div>
+        <div class="menu">
+          <a href="#inicio">Inicio</a>
+          <a href="#servicios">Servicios</a>
+          <a href="#eventos">Eventos</a>
+          <a href="#ubicacion">Ubicación</a>
+          <a href="#contacto">Contacto</a>
+        </div>
+      </nav>
+    </header>
 
-<header>
-<nav class="navbar">
-    <div><img src="src/assets/GoldenGardenDarckTheme.png" alt="Logo no cargado" class="LogoEmpresanav"></div>
-<div class="menu">
-<a href="#inicio">Inicio</a>
-<a href="#servicios">Servicios</a>
-<a href="#eventos">Eventos</a>
-<a href="#ubicacion">Ubicación</a>
-<a href="#contacto">Contacto</a>
-</div>
-</nav>
-</header>
-
-<section class="hero">
-    <div class="hero-glass">
-    <div><img src="src/assets/GoldenGardenDarckTheme.png" alt="Logo no cargado" class="LogoEmpresa"></div>
-    <p>Jardín de eventos elegantes y momentos inolvidables</p>
-    <div class="buttonCotizar">
-        <a href="#contacto">Cotizar evento</a>
-    </div>
-  </div>
-</section>
-
-<h2>-SERVICIOS-</h2>
-
-<section id="servicios">
-  <div class="cards">
-
-    <div class="card">
-      <div class="img-wrapper">
-        <img src="https://cdn0.bodas.com.mx/vendor/5910/3_2/960/jpg/img-2553-comprimido_5_105910.jpeg" alt="Alquiler de Jardín">
+    <section class="hero">
+      <div class="hero-glass">
+        <div>
+          <img
+            src="src/assets/GoldenGardenDarckTheme.png"
+            alt="Logo no cargado"
+            class="LogoEmpresa"
+          />
+        </div>
+        <p>Jardín de eventos elegantes y momentos inolvidables</p>
+        <div class="buttonCotizar">
+          <a href="#contacto">Cotizar evento</a>
+        </div>
       </div>
-      <h3>Alquiler de Jardín</h3>
-      <p>Espacio amplio y natural para eventos inolvidables.</p>
-    </div>
+    </section>
 
-    <div class="card">
-      <div class="img-wrapper">
-        <img src="https://industriaskerosti.com/wp-content/uploads/2022/12/mesas-para-eventos-sociales-en-industrias-kerosti.jpg" alt="Decoración y Mobiliario">
+    <h2>-SERVICIOS-</h2>
+    <section id="servicios">
+      <div class="cards">
+        <div class="card">
+          <div class="img-wrapper">
+            <img
+              src="https://cdn0.bodas.com.mx/vendor/5910/3_2/960/jpg/img-2553-comprimido_5_105910.jpeg"
+              alt="Alquiler de Jardín"
+            />
+          </div>
+          <h3>Alquiler de Jardín</h3>
+          <p>Espacio amplio y natural para eventos inolvidables.</p>
+        </div>
+
+        <div class="card">
+          <div class="img-wrapper">
+            <img
+              src="https://industriaskerosti.com/wp-content/uploads/2022/12/mesas-para-eventos-sociales-en-industrias-kerosti.jpg"
+              alt="Decoración y Mobiliario"
+            />
+          </div>
+          <h3>Decoración & Mobiliario</h3>
+          <p>Montajes elegantes con detalles personalizados.</p>
+        </div>
+
+        <div class="card">
+          <div class="img-wrapper">
+            <img
+              src="https://www.cesae.es/images/articulos/que-es-lo-que-hace-un-organizador-de-eventos2.jpg"
+              alt="Planificación de Eventos"
+            />
+          </div>
+          <h3>Planificación de Eventos</h3>
+          <p>Organización completa para que disfrutes sin preocupaciones.</p>
+        </div>
       </div>
-      <h3>Decoración & Mobiliario</h3>
-      <p>Montajes elegantes con detalles personalizados.</p>
-    </div>
+    </section>
 
-    <div class="card">
-      <div class="img-wrapper">
-        <img src="https://www.cesae.es/images/articulos/que-es-lo-que-hace-un-organizador-de-eventos2.jpg" alt="Planificación de Eventos">
+    <section id="eventos">
+      <h2>Eventos</h2>
+      <div class="cards">
+        <div class="card">Bodas</div>
+        <div class="card">XV Años</div>
+        <div class="card">Eventos Corporativos</div>
       </div>
-      <h3>Planificación de Eventos</h3>
-      <p>Organización completa para que disfrutes sin preocupaciones.</p>
-    </div>
+    </section>
 
-  </div>
-</section>
+    <section id="ubicacion">
+      <h2>Ubicación</h2>
+      <iframe src="https://www.google.com/maps"></iframe>
+    </section>
 
+    <section id="contacto">
+      <h2>Contacto</h2>
+      <form
+        action="mailto:goldengarden@gmail.com"
+        method="post"
+        enctype="text/plain"
+      >
+        <input type="text" name="nombre" placeholder="Nombre" required />
+        <input type="email" name="correo" placeholder="Correo" required />
+        <textarea name="mensaje" placeholder="Mensaje" rows="5"></textarea>
+        <button type="submit">Enviar mensaje</button>
+      </form>
+    </section>
 
+    <a
+      class="whatsapp"
+      href="https://wa.me/50252774798"
+      target="_blank"
+      aria-label="WhatsApp"
+    >
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
 
-<section id="eventos">
-<h2>Eventos</h2>
-<div class="cards">
-<div class="card">Bodas</div>
-<div class="card">XV Años</div>
-<div class="card">Eventos Corporativos</div>
-</div>
-</section>
-
-<section id="ubicacion">
-<h2>Ubicación</h2>
-<iframe src="https://www.google.com/maps"></iframe>
-</section>
-
-<section id="contacto">
-<h2>Contacto</h2>
-<form action="mailto:goldengarden@gmail.com" method="post" enctype="text/plain">
-<input type="text" name="nombre" placeholder="Nombre" required>
-<input type="email" name="correo" placeholder="Correo" required>
-<textarea name="mensaje" placeholder="Mensaje" rows="5"></textarea>
-<button type="submit">Enviar mensaje</button>
-</form>
-</section>
-
-<a class="whatsapp" href="https://wa.me/50252774798" target="_blank" aria-label="WhatsApp">
-  <i class="fa-brands fa-whatsapp"></i>
-</a>
-
-<footer>
-© Golden Garden Jardín de Eventos
-</footer>
-
-</body>
+    <footer>© Golden Garden Jardín de Eventos</footer>
+  </body>
 </html>
