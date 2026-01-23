@@ -14,10 +14,12 @@
    ========================================================= */
 *{
   margin:0;
+  padding-top: 10px;
   padding:0;
   box-sizing:border-box;
   font-family:'Segoe UI', 'Franklin Gothic Medium',
               'Arial Narrow', Arial, Geneva, Verdana, sans-serif;
+              
 }
 
 html{
@@ -83,9 +85,9 @@ max-height: 50px;
       rgba(0,0,0,0.95) 70%),
     url("../img/hero.jpg") center / cover no-repeat;
   display:flex;
-  align-items:center;
+  align-items:start;
   justify-content:center;
-  padding:2rem;
+  padding:1rem;
 }
 
 /* =========================================================
@@ -93,8 +95,9 @@ max-height: 50px;
    ========================================================= */
 .hero-glass{
   width:100%;
-  max-width:1100px;
-  padding:3rem 2.5rem;
+  max-width:95%;
+  min-height: 80vh;        /* 👈 MÁS ALTO sin romper */
+  padding:3rem 2.5rem;    /* un poco más de aire */
 
   background:rgba(255,255,255,0.09);
 
@@ -109,7 +112,9 @@ max-height: 50px;
     0 10px 40px rgba(0,0,0,0.65);
 
   text-align:center;
+  align-content: center;
 }
+
 
 /* =========================================================
    TEXTO HERO
@@ -137,10 +142,10 @@ h2{
   text-align:center;
   font-size:1.8rem;
   color:var(--gold);
-  margin:40px 0 20px;
+  margin:20px 0 20px;
   text-transform:uppercase;
   letter-spacing:1px;
-  padding-top: 100px; /* PARA QUE NO QUEDE PEGADO AL NAVBAR Y DE ESPACIO AL DESPLAZARSE ENTRE SECCIONES*/
+  padding-top: 80px; /* PARA QUE NO QUEDE PEGADO AL NAVBAR Y DE ESPACIO AL DESPLAZARSE ENTRE SECCIONES*/
 }
 
 /* =========================================================
@@ -230,7 +235,7 @@ h2{
    ========================================================= */
 /* ===== SECCIÓN UBICACIÓN ===== */
 #ubicacion{
-  padding: 60px 20px;
+  padding: 40px 20px;
   background-color: #f5f5f5;
   text-align: center;
   background: var(--black);
@@ -241,12 +246,13 @@ h2{
   margin-bottom: 25px;
   color: var(--gold);
   background: var(--black);
+  width: 100%;
 }
 
 /* Contenedor del mapa */
 .mapa{
   width: 100%;
-  max-width: 90%;
+  max-width: 95%;
   margin: 0 auto;
   border-radius: 15px;
   overflow: hidden; /* 🔑 clave para el borde */
@@ -256,7 +262,7 @@ h2{
 /* Iframe */
 .mapa iframe{
   width: 100%;
-  height: 400px;
+  height: 450px;
   border: 0;
 }
 
@@ -276,6 +282,7 @@ h2{
    FORMULARIO
    ========================================================= */
 
+
 #contacto select{
   width: 100%;
   padding: 12px;
@@ -288,7 +295,7 @@ h2{
 }
 
 form{
-  max-width:800px;
+  max-width:95%;
   margin:auto;
 }
 
