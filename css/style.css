@@ -1,392 +1,283 @@
-/* =========================================================
-   VARIABLES DE COLOR
-   ========================================================= */
 :root{
-  --gold:#e4b444;
-  --black:#0b0b0b;
-  --gray:#f5f5f5;
-  --grayObscuro:#2c2b2b;
-  --white:#ffffff;
+--gold:#e4b444;
+--black:#0b0b0b;
+--gray:#f3f3f3;
+--white:#ffffff;
 }
 
-/* =========================================================
-   RESET Y BASE
-   ========================================================= */
 *{
-  margin:0;
-  padding-top: 10px;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Segoe UI', 'Franklin Gothic Medium',
-              'Arial Narrow', Arial, Geneva, Verdana, sans-serif;
-              
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI', sans-serif;
 }
 
-html{
-  scroll-behavior:smooth;
-}
+html{scroll-behavior:smooth;}
+body{background:var(--black);}
 
-body{
-  background:var(--black);
-  color:var(--black);
-}
-
-/* =========================================================
-   HEADER / NAVBAR
-   ========================================================= */
+/* NAVBAR */
 header{
-  position: sticky;
-  top:0;
-  width:100%;
-  background:var(--black);
-  padding:15px 30px;
-  z-index:1000;
-  height:80px;
+position:fixed;
+width:100%;
+top:0;
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(12px);
+transition:.4s ease;
+z-index:1000;
 }
 
-nav{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  flex-wrap:wrap;
-  padding: 2px;
+header.scrolled{
+background:rgba(0,0,0,0.95);
+box-shadow:0 5px 20px rgba(0,0,0,.4);
 }
 
-.LogoEmpresanav{
-max-height: 50px;
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
 }
 
-.LogoEmpresa{
-  height:200px;
-  margin-top:-10px;
+.LogoEmpresanav{height:50px;}
+
+.menu{
+display:flex;
+gap:25px;
 }
 
 .menu a{
-  color:var(--white);
-  text-decoration:none;
-  margin-left:5px;
-  font-size:.95rem;
-  transition:.3s;
+color:var(--white);
+text-decoration:none;
+position:relative;
+padding-bottom:5px;
 }
 
-.menu a:hover{
-  color:var(--gold);
+.menu a.active::after{
+content:"";
+position:absolute;
+left:0;
+bottom:0;
+width:100%;
+height:2px;
+background:var(--gold);
 }
 
-/* =========================================================
-   HERO SECTION (IMAGEN + GRADIENTE OSCURO)
-   ========================================================= */
+.menu-toggle{
+display:none;
+color:white;
+font-size:24px;
+cursor:pointer;
+}
+
+/* HERO */
 .hero{
-  min-height:100vh;
-  width:100%;
-  background:
-    radial-gradient(circle at top,
-      rgba(34,34,34,0.9) 0%,
-      rgba(0,0,0,0.95) 70%),
-    url("../img/hero.jpg") center / cover no-repeat;
-  display:flex;
-  align-items:start;
-  justify-content:center;
-  padding:1rem;
+height:100vh;
+background:url("../img/hero.jpg") center/cover no-repeat;
+position:relative;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
 }
 
-/* =========================================================
-   CONTENEDOR VIDRIO (GLASSMORPHISM REAL)
-   ========================================================= */
-.hero-glass{
-  width:100%;
-  max-width:95%;
-  min-height: 80vh;        /* 👈 MÁS ALTO sin romper */
-  padding:3rem 2.5rem;    /* un poco más de aire */
-
-  background:rgba(255,255,255,0.09);
-
-  backdrop-filter:blur(18px) saturate(150%);
-  -webkit-backdrop-filter:blur(18px) saturate(150%);
-
-  border-radius:20px;
-  border:1px solid rgba(255,255,255,0.22);
-
-  box-shadow:
-    inset 0 1px 1px rgba(255,255,255,0.25),
-    0 10px 40px rgba(0,0,0,0.65);
-
-  text-align:center;
-  align-content: center;
+.hero-overlay{
+position:absolute;
+width:100%;
+height:100%;
+background:linear-gradient(to bottom, rgba(0,0,0,.7), rgba(0,0,0,.9));
 }
 
-
-/* =========================================================
-   TEXTO HERO
-   ========================================================= */
-.hero-glass h1{
-  font-size:clamp(2.6rem,5vw,4rem);
-  font-weight:300;
-  letter-spacing:2px;
-  color:var(--white);
-  margin-bottom:1rem;
+.hero-content{
+position:relative;
+color:white;
+max-width:800px;
+padding:20px;
 }
 
-.hero-glass h1 span{
-  color:var(--gold);
-  font-weight:500;
+.LogoEmpresa{
+height:170px;
+margin-bottom:20px;
 }
 
-.hero-glass p{
-  color:rgba(255,255,255,0.9);
-  font-size:1.1rem;
-  margin-bottom:2rem;
+.pfraseInicio{font-size:18px;
+margin-bottom:30px;
+color:var(--gray);
+}
+
+.hero span{color:var(--gold);}
+
+.btn-primary{
+background:var(--gold);
+color:black;
+padding:15px 35px;
+border-radius:30px;
+text-decoration:none;
+font-weight:bold;
+transition:.3s;
+}
+
+.btn-primary:hover{transform:scale(1.05);}
+
+/* SECCIONES SUAVES */
+section{
+padding:120px 10% 100px;
+transition:.4s ease;
+}
+
+.section-dark{
+background:linear-gradient(to bottom,#0b0b0b,#151515);
+color:white;
+}
+
+.section-light{
+background:linear-gradient(to bottom,#f5f5f5,#e8e8e8);
+color:black;
 }
 
 h2{
-  text-align:center;
-  font-size:1.8rem;
-  color:var(--gold);
-  margin:20px 0 20px;
-  text-transform:uppercase;
-  letter-spacing:1px;
-  padding-top: 80px; /* PARA QUE NO QUEDE PEGADO AL NAVBAR Y DE ESPACIO AL DESPLAZARSE ENTRE SECCIONES*/
+text-align:center;
+margin-bottom:50px;
+color:var(--gold);
 }
 
-/* =========================================================
-   SECCIÓN CARDS (ELEGANTES + RESPONSIVE)
-   ========================================================= */
+/* CARDS */
 .cards{
-  display:grid;
-  padding:20px;
-  grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
-  gap:30px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
 }
 
 .card{
-  background:var(--gray);
-  border-radius:18px;
-  overflow:hidden;
-  text-align:center;
-  transition:transform .3s ease, box-shadow .3s ease;
-  display:flex;
-  flex-direction:column;
+position:relative;
+overflow:hidden;
+border-radius:20px;
 }
 
-/* CONTENEDOR DE IMAGEN */
-.card .img-wrapper{
-  width:100%;
-  position:relative;
-  padding-top:56.25%; /* 16:9 */
-  overflow:hidden;
+.card img{
+width:100%;
+height:350px;
+object-fit:cover;
+transition:.6s;
 }
 
-/* IMAGEN */
-.card .img-wrapper img{
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-  background:#eaeaea;
+.card-overlay{
+position:absolute;
+bottom:0;
+width:100%;
+background:linear-gradient(to top,rgba(0,0,0,.8),transparent);
+color:white;
+padding:30px;
 }
 
-/* CONTENIDO */
-.card h3{
-  margin:20px 20px 10px;
-  font-size:1.1rem;
-  color:var(--gold);
-  text-transform:uppercase;
-  letter-spacing:1px;
+.card:hover img{transform:scale(1.1);}
+
+/* GALERÍA */
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
 }
 
-.card p{
-  margin:0 20px 25px;
-  font-size:.95rem;
-  color:var(--black);
-  font-weight:bold;
-  line-height:1.5;
+.gallery img{
+width:100%;
+height:280px;
+object-fit:cover;
+border-radius:20px;
+transition:.4s;
 }
 
-/* HOVER */
-.card:hover{
-  transform:translateY(-8px);
-  box-shadow:0 12px 28px rgba(0,0,0,.15);
-}
+.gallery img:hover{transform:scale(1.05);}
 
-/* =========================================================
-   AJUSTES MÓVIL
-   ========================================================= */
-@media(max-width:480px){
-  .cards{
-    padding:15px;
-    gap:20px;
-  }
-
-  .card h3{
-    font-size:1rem;
-  }
-
-  .card p{
-    font-size:.9rem;
-  }
-}
-
-
-/* =========================================================
-   MAPA / IFRAME
-   ========================================================= */
-/* ===== SECCIÓN UBICACIÓN ===== */
-#ubicacion{
-  padding: 40px 20px;
-  background-color: #f5f5f5;
-  text-align: center;
-  background: var(--black);
-}
-
-#ubicacion h2{
-  font-size: 2rem;
-  margin-bottom: 25px;
-  color: var(--gold);
-  background: var(--black);
-  width: 100%;
-}
-
-/* Contenedor del mapa */
-.mapa{
-  width: 100%;
-  max-width: 95%;
-  margin: 0 auto;
-  border-radius: 15px;
-  overflow: hidden; /* 🔑 clave para el borde */
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-}
-
-/* Iframe */
+/* MAPA */
 .mapa iframe{
-  width: 100%;
-  height: 450px;
-  border: 0;
+width:100%;
+height:450px;
+border-radius:20px;
+border:0;
 }
 
-/* Responsive móvil */
-@media (max-width: 768px){
-  .mapa iframe{
-    height: 280px;
-  }
-}
-
-.mapa iframe{
-  filter: grayscale(8%) contrast(1.05);
-}
-
-
-/* =========================================================
-   FORMULARIO
-   ========================================================= */
-
-
-#contacto select{
-  width: 100%;
-  padding: 12px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  font-size: 1rem;
-  background-color: #fff;
-  padding: 10px;
-  margin-bottom: 15px;
-}
-
+/* FORM */
 form{
-  max-width:95%;
-  margin:auto;
+max-width:600px;
+margin:auto;
 }
 
-input,
-textarea{
-  width:100%;
-  padding:15px;
-  margin-bottom:15px;
-  border-radius:8px;
-  border:1px solid #ccc;
+input,select,textarea{
+width:100%;
+padding:15px;
+margin-bottom:15px;
+border-radius:12px;
+border:1px solid #ccc;
 }
 
 button{
-  width:100%;
-  padding:15px;
-  border:none;
-  border-radius:8px;
-  font-size:1rem;
-  cursor:pointer;
-  background:var(--gold);
-  color:var(--black);
-  font-weight: bold;
-  font-size: 20px;
+width:100%;
+padding:15px;
+border:none;
+border-radius:12px;
+background:var(--gold);
+font-weight:bold;
+cursor:pointer;
 }
 
-/* =========================================================
-   FOOTER
-   ========================================================= */
+/* FOOTER */
 footer{
-  background:var(--black);
-  color:var(--white);
-  text-align:center;
-  padding:30px;
+text-align:center;
+padding:30px;
+background:black;
+color:white;
 }
 
-/* =========================================================
-   BOTÓN WHATSAPP
-   ========================================================= */
+/* WHATSAPP */
 .whatsapp{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  width:55px;
-  height:55px;
-  background:#25d366;
-  color:#fff !important;
-  border-radius:50%;
-  font-size:28px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-decoration:none;
-  box-shadow:0 8px 20px rgba(0,0,0,.3);
-  transition:.3s;
+position:fixed;
+bottom:90px; /* más separado del borde */
+right:25px;
+width:60px;
+height:60px;
+background:#25d366;
+color:white;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:28px;
+box-shadow:0 8px 20px rgba(0,0,0,.4);
+transition:all .3s ease;
+text-decoration:none;
+line-height:1; /* evita espacio inferior */
 }
 
+/* Evita línea blanca debajo del icono */
+.whatsapp img,
+.whatsapp i{
+display:block;
+line-height:1;
+}
+
+/* efecto flotante */
 .whatsapp:hover{
-  transform:scale(1.1);
+transform:translateY(-6px);
+box-shadow:0 12px 25px rgba(0,0,0,.5);
 }
 
-
-.buttonCotizar a{
-  display:inline-block;
-  padding:12px 25px;
-  background:var(--gold);
-  color:var(--black);
-  text-decoration:none;
-  border-radius:30px;
-  font-weight:600;
-  transition:.3s;
-}
-
-/* =========================================================
-   RESPONSIVE
-   ========================================================= */
+/* RESPONSIVE */
 @media(max-width:768px){
-  header{
-    padding:5px;
-  }
 
-  .menu a{
-    margin-left:10px;
-    font-size:.85rem;
-  }
+.menu{
+position:absolute;
+top:70px;
+right:0;
+background:black;
+flex-direction:column;
+width:100%;
+padding:20px;
+display:none;
+}
 
-  .hero-glass{
-    padding:2rem 1.5rem;
-    border-radius:16px;
-  }
-
-  .hero-glass h1{
-    font-size:2.4rem;
-  }
+.menu.active{display:flex;}
+.menu-toggle{display:block;}
+.card img{height:250px;}
+.gallery img{height:200px;}
+.mapa iframe{height:300px;}
 }
